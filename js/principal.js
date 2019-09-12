@@ -39,3 +39,8 @@ for(var i = 0; i < pacientes.length; i++) {
     tdImc.textContent = imc;
 }
 
+var botaoAdicionar = document.querySelector('#adicionar-paciente');
+
+botaoAdicionar.addEventListener('click', function() {
+    console.log('teste de sistema');
+});
