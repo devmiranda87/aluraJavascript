@@ -38,10 +38,3 @@ for(var i = 0; i < pacientes.length; i++) {
 
     tdImc.textContent = imc;
 }
-
-var botaoAdicionar = document.querySelector('#adicionar-paciente');
-
-botaoAdicionar.addEventListener('click', function(event) {
-    event.preventDefault();
-    console.log('teste de sistem');
-});
