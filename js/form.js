@@ -21,6 +21,8 @@ botaoAdicionar.addEventListener("click", function(event) {
     tabela.appendChild(pacienteTr);
     form.reset();
 
+    var ul = document.querySelector('#mensagens-erro');
+    ul.innerHTML = '';
 });
 
 function exibeMensagensDeErro(erros)
@@ -29,7 +31,7 @@ function exibeMensagensDeErro(erros)
     var ul = document.querySelector('#mensagens-erro');
 
     //LIMPANDO AS MENSAGENS DE ERRO ANTES DE LANÇAR AS NOVAS
-    ul.textContent = '';
+    ul.innerHTML = '';
 
     erros.forEach(function(erro) {
         var li = document.createElement('li');
