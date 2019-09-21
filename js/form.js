@@ -51,3 +51,14 @@ function montaTd(dado, classe)
 
     return td;
 }
+
+function validaPaciente(paciente)
+{
+    if (validaPeso(paciente.peso) === false) {
+        return false;
+    }
+
+    if (validaAltura(paciente.altura) === false) {
+        return false;
+    }
+}
