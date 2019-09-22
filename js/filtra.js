@@ -2,17 +2,25 @@ var campoFiltro = document.querySelector('#filtrar-tabela');
 
 campoFiltro.addEventListener('input', function() {
     var textoFiltro = this.value;
-
     var pacientes = document.querySelectorAll('.paciente');
-    pacientes.forEach(function(paciente) {
-        var tdNome = paciente.querySelector('.info-nome');
-        var nome = tdNome.textContent;
 
-        if (nome != textoFiltro) {
-            paciente.classList.add('invisivel');
-            return;
-        }
+    if (textoFiltro.length > 0) {
+        pacientes.forEach(function(paciente) {
+            var tdNome = paciente.querySelector('.info-nome');
+            var nome = tdNome.textContent;
+            var expressao = new RegExp(textoFiltro, 'i');
 
-        paciente.classList.remove('invisivel');
-    });
+            if (expressao.test(nome) === false) {
+                paciente.classList.add('invisivel');
+                return;
+            }
+
+            paciente.classList.remove('invisivel');
+        });
+
+    } else {
+        pacientes.forEach(function(paciente) {
+            paciente.classList.remove('invisivel');
+        });
+    }
 });
